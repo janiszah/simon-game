@@ -1,0 +1,386 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny402-SS U1
+U 1 1 5DB8C407
+P 5700 3700
+F 0 "U1" H 5171 3746 50  0000 R CNN
+F 1 "ATtiny402-SS" H 5171 3655 50  0000 R CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5700 3700 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATtiny202-402-AVR-MCU-with-Core-Independent-Peripherals_and-picoPower-40001969A.pdf" H 5700 3700 50  0001 C CNN
+	1    5700 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 4300 5700 4400
+$Comp
+L power:GND #PWR0101
+U 1 1 5DB8CEEF
+P 5700 4500
+F 0 "#PWR0101" H 5700 4250 50  0001 C CNN
+F 1 "GND" H 5705 4327 50  0000 C CNN
+F 2 "" H 5700 4500 50  0001 C CNN
+F 3 "" H 5700 4500 50  0001 C CNN
+	1    5700 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L electromechanics_ingus:CR2032_V BAT1
+U 1 1 5DB8D4E9
+P 3800 3600
+F 0 "BAT1" H 4088 3503 60  0000 L CNN
+F 1 "CR2032_V" H 4088 3397 60  0000 L CNN
+F 2 "Battery:BatteryHolder_Keystone_3002_1x2032" H 3875 3375 60  0001 L TNN
+F 3 "" H 3800 3600 60  0000 C CNN
+	1    3800 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 3100 5700 2800
+Wire Wire Line
+	5700 2800 4700 2800
+Wire Wire Line
+	3800 2800 3800 3600
+Wire Wire Line
+	5700 4400 3800 4400
+Wire Wire Line
+	3800 4400 3800 3900
+Connection ~ 5700 4400
+Wire Wire Line
+	5700 4400 5700 4500
+$Comp
+L Device:C_Small C1
+U 1 1 5DB8F71C
+P 4700 3100
+F 0 "C1" H 4792 3146 50  0000 L CNN
+F 1 "0.1uF" H 4792 3055 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D4.3mm_W1.9mm_P5.00mm" H 4700 3100 50  0001 C CNN
+F 3 "~" H 4700 3100 50  0001 C CNN
+	1    4700 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 3000 4700 2800
+Connection ~ 4700 2800
+Wire Wire Line
+	4700 2800 3800 2800
+Wire Wire Line
+	4700 3200 4700 3300
+$Comp
+L power:GND #PWR0102
+U 1 1 5DB904CF
+P 4700 3300
+F 0 "#PWR0102" H 4700 3050 50  0001 C CNN
+F 1 "GND" H 4705 3127 50  0000 C CNN
+F 2 "" H 4700 3300 50  0001 C CNN
+F 3 "" H 4700 3300 50  0001 C CNN
+	1    4700 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 3400 6800 3400
+Text Label 6800 3400 2    50   ~ 0
+RESET_UPDI
+Text Label 6800 3800 2    50   ~ 0
+BUZZER
+$Comp
+L Device:R_Small R1
+U 1 1 5DB91BF5
+P 8300 3000
+F 0 "R1" H 8359 3046 50  0000 L CNN
+F 1 "220" H 8359 2955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 8300 3000 50  0001 C CNN
+F 3 "~" H 8300 3000 50  0001 C CNN
+	1    8300 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_Small D1
+U 1 1 5DB9238E
+P 8300 3300
+F 0 "D1" V 8346 3232 50  0000 R CNN
+F 1 "LED_Small" V 8255 3232 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" V 8300 3300 50  0001 C CNN
+F 3 "~" V 8300 3300 50  0001 C CNN
+	1    8300 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8300 3200 8300 3100
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5DB94A81
+P 8300 4200
+F 0 "SW1" V 8254 4348 50  0000 L CNN
+F 1 "SW_Push" V 8345 4348 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 8300 4400 50  0001 C CNN
+F 3 "~" H 8300 4400 50  0001 C CNN
+	1    8300 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8300 2900 8300 2800
+Wire Wire Line
+	8300 3400 8300 3900
+Wire Wire Line
+	8300 4400 8300 4500
+$Comp
+L power:GND #PWR0103
+U 1 1 5DB97DA0
+P 8300 4500
+F 0 "#PWR0103" H 8300 4250 50  0001 C CNN
+F 1 "GND" H 8305 4327 50  0000 C CNN
+F 2 "" H 8300 4500 50  0001 C CNN
+F 3 "" H 8300 4500 50  0001 C CNN
+	1    8300 4500
+	1    0    0    -1  
+$EndComp
+Connection ~ 8300 3900
+Wire Wire Line
+	8300 3900 8300 4000
+$Comp
+L Device:R_Small R3
+U 1 1 5DB9A880
+P 8800 3000
+F 0 "R3" H 8859 3046 50  0000 L CNN
+F 1 "220" H 8859 2955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 8800 3000 50  0001 C CNN
+F 3 "~" H 8800 3000 50  0001 C CNN
+	1    8800 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_Small D2
+U 1 1 5DB9A88A
+P 8800 3300
+F 0 "D2" V 8846 3232 50  0000 R CNN
+F 1 "LED_Small" V 8755 3232 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" V 8800 3300 50  0001 C CNN
+F 3 "~" V 8800 3300 50  0001 C CNN
+	1    8800 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8800 3200 8800 3100
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5DB9A895
+P 8800 4200
+F 0 "SW2" V 8754 4348 50  0000 L CNN
+F 1 "SW_Push" V 8845 4348 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 8800 4400 50  0001 C CNN
+F 3 "~" H 8800 4400 50  0001 C CNN
+	1    8800 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8800 2900 8800 2800
+Wire Wire Line
+	8800 4400 8800 4500
+$Comp
+L power:GND #PWR0104
+U 1 1 5DB9A8A2
+P 8800 4500
+F 0 "#PWR0104" H 8800 4250 50  0001 C CNN
+F 1 "GND" H 8805 4327 50  0000 C CNN
+F 2 "" H 8800 4500 50  0001 C CNN
+F 3 "" H 8800 4500 50  0001 C CNN
+	1    8800 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 3400 8800 3700
+$Comp
+L Device:R_Small R4
+U 1 1 5DBA05C6
+P 9300 3000
+F 0 "R4" H 9359 3046 50  0000 L CNN
+F 1 "220" H 9359 2955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 9300 3000 50  0001 C CNN
+F 3 "~" H 9300 3000 50  0001 C CNN
+	1    9300 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_Small D3
+U 1 1 5DBA05CC
+P 9300 3300
+F 0 "D3" V 9346 3232 50  0000 R CNN
+F 1 "LED_Small" V 9255 3232 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" V 9300 3300 50  0001 C CNN
+F 3 "~" V 9300 3300 50  0001 C CNN
+	1    9300 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9300 3200 9300 3100
+$Comp
+L Switch:SW_Push SW3
+U 1 1 5DBA05D3
+P 9300 4200
+F 0 "SW3" V 9254 4348 50  0000 L CNN
+F 1 "SW_Push" V 9345 4348 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9300 4400 50  0001 C CNN
+F 3 "~" H 9300 4400 50  0001 C CNN
+	1    9300 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9300 2900 9300 2800
+Wire Wire Line
+	9300 4400 9300 4500
+$Comp
+L power:GND #PWR0105
+U 1 1 5DBA05DB
+P 9300 4500
+F 0 "#PWR0105" H 9300 4250 50  0001 C CNN
+F 1 "GND" H 9305 4327 50  0000 C CNN
+F 2 "" H 9300 4500 50  0001 C CNN
+F 3 "" H 9300 4500 50  0001 C CNN
+	1    9300 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 3400 9300 3600
+Wire Wire Line
+	6300 3900 8300 3900
+$Comp
+L Device:R_Small R5
+U 1 1 5DBA18F3
+P 9800 3000
+F 0 "R5" H 9859 3046 50  0000 L CNN
+F 1 "220" H 9859 2955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 9800 3000 50  0001 C CNN
+F 3 "~" H 9800 3000 50  0001 C CNN
+	1    9800 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_Small D4
+U 1 1 5DBA18F9
+P 9800 3300
+F 0 "D4" V 9846 3232 50  0000 R CNN
+F 1 "LED_Small" V 9755 3232 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" V 9800 3300 50  0001 C CNN
+F 3 "~" V 9800 3300 50  0001 C CNN
+	1    9800 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9800 3200 9800 3100
+$Comp
+L Switch:SW_Push SW4
+U 1 1 5DBA1900
+P 9800 4200
+F 0 "SW4" V 9754 4348 50  0000 L CNN
+F 1 "SW_Push" V 9845 4348 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9800 4400 50  0001 C CNN
+F 3 "~" H 9800 4400 50  0001 C CNN
+	1    9800 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9800 2900 9800 2800
+Wire Wire Line
+	9800 4400 9800 4500
+$Comp
+L power:GND #PWR0106
+U 1 1 5DBA1908
+P 9800 4500
+F 0 "#PWR0106" H 9800 4250 50  0001 C CNN
+F 1 "GND" H 9805 4327 50  0000 C CNN
+F 2 "" H 9800 4500 50  0001 C CNN
+F 3 "" H 9800 4500 50  0001 C CNN
+	1    9800 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 3400 9800 3500
+Wire Wire Line
+	8300 2800 8800 2800
+Wire Wire Line
+	8800 2800 9300 2800
+Connection ~ 8800 2800
+Wire Wire Line
+	9300 2800 9800 2800
+Connection ~ 9300 2800
+Connection ~ 8300 2800
+Connection ~ 5700 2800
+Wire Wire Line
+	6300 3700 8800 3700
+Connection ~ 8800 3700
+Wire Wire Line
+	8800 3700 8800 4000
+Wire Wire Line
+	6300 3600 9300 3600
+Connection ~ 9300 3600
+Wire Wire Line
+	9300 3600 9300 4000
+Wire Wire Line
+	6300 3500 9800 3500
+Connection ~ 9800 3500
+Wire Wire Line
+	9800 3500 9800 4000
+$Comp
+L Device:Buzzer BZ1
+U 1 1 5DBA5E58
+P 7700 3100
+F 0 "BZ1" H 7852 3129 50  0000 L CNN
+F 1 "Buzzer" H 7852 3038 50  0000 L CNN
+F 2 "Buzzer_Beeper:Buzzer_12x9.5RM7.6" V 7675 3200 50  0001 C CNN
+F 3 "~" V 7675 3200 50  0001 C CNN
+	1    7700 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R2
+U 1 1 5DBA6DD5
+P 7300 3100
+F 0 "R2" H 7359 3146 50  0000 L CNN
+F 1 "10k" H 7359 3055 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 7300 3100 50  0001 C CNN
+F 3 "~" H 7300 3100 50  0001 C CNN
+	1    7300 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 2800 7300 2800
+Wire Wire Line
+	7600 3000 7500 3000
+Wire Wire Line
+	7500 3000 7500 2800
+Connection ~ 7500 2800
+Wire Wire Line
+	7500 2800 8300 2800
+Wire Wire Line
+	7300 3000 7300 2800
+Connection ~ 7300 2800
+Wire Wire Line
+	7300 2800 7500 2800
+Wire Wire Line
+	7300 3200 7300 3300
+Wire Wire Line
+	7300 3300 7500 3300
+Wire Wire Line
+	7500 3300 7500 3200
+Wire Wire Line
+	7500 3200 7600 3200
+Wire Wire Line
+	7300 3300 7300 3800
+Wire Wire Line
+	6300 3800 7300 3800
+Connection ~ 7300 3300
+$EndSCHEMATC
