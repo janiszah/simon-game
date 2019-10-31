@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source "/Volumes/Data HD/Projects/Zahit/simon-game/simon-game.sch")
-    (date "2019 October 30, Wednesday 01:25:16")
+    (source "/Volumes/Data HD/Projects/Zahit/simon-game/hardware/simon-game.sch")
+    (date "2019 October 31, Thursday 22:58:44")
     (tool "Eeschema (5.1.4-0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
