@@ -1,3 +1,7 @@
 .DS_Store
 hardware/simon-game.kicad_pcb-bak
 hardware/simon-game.sch-bak
+hardware/gerber
+hardware/simon-game-rescue.dcm
+hardware/simon-game-rescue.lib
+firmware/build
