@@ -44,8 +44,8 @@ target_link_options(${target} PRIVATE
 # Create hex file
 add_custom_command(TARGET ${target}
     POST_BUILD
-    COMMAND ${TOOLCHAIN_PREFIX}-objcopy -O ihex ${target} ${target}.hex
-    COMMAND ${TOOLCHAIN_PREFIX}-objcopy -O binary ${target} ${target}.bin
+    COMMAND ${TOOLCHAIN_PREFIX}-objcopy -O ihex ${target}.elf ${target}.hex
+    COMMAND ${TOOLCHAIN_PREFIX}-objcopy -O binary ${target}.elf ${target}.bin
     )
 
 

@@ -5,3 +5,5 @@ hardware/gerber
 hardware/simon-game-rescue.dcm
 hardware/simon-game-rescue.lib
 firmware/build
+.vscode
+build
