@@ -7,3 +7,6 @@
 [submodule "firmware/3rd_party/cmsis_core"]
 	path = firmware/3rd_party/cmsis_core
 	url = https://github.com/STMicroelectronics/cmsis_core.git
+[submodule "firmware/3rd_party/segger_rtt"]
+	path = firmware/3rd_party/segger_rtt
+	url = git@bitbucket.org:erica-synths/segger-rtt.git

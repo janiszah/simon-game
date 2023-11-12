@@ -3,17 +3,17 @@
 
 
 #define BUZZER_PORT   GPIOB
-#define BUZZER_PIN    GPIO_PIN_7
+#define BUZZER_PIN    GPIO_PIN_8  // GPIO_PIN_7
 
 // Buttons
 #define RED_BTN_PORT      GPIOB
-#define RED_BTN_PIN       GPIO_PIN_3
+#define RED_BTN_PIN       GPIO_PIN_5  // WKUP6
 #define GREEN_BTN_PORT    GPIOA
-#define GREEN_BTN_PIN     GPIO_PIN_0
+#define GREEN_BTN_PIN     GPIO_PIN_0  // WKUP1
 #define YELLOW_BTN_PORT   GPIOA
-#define YELLOW_BTN_PIN    GPIO_PIN_2
+#define YELLOW_BTN_PIN    GPIO_PIN_2  // WKUP4
 #define BLUE_BTN_PORT     GPIOA
-#define BLUE_BTN_PIN      GPIO_PIN_4
+#define BLUE_BTN_PIN      GPIO_PIN_4  // WKUP2
 
 // LEDs
 #define RED_LED_PORT      GPIOA

@@ -6,6 +6,7 @@ use_STM32hal(G0 .)
 
 set(src
   main.c
+  game.c
   board/bsp.c
 
   stm32g0xx_it.c
@@ -38,8 +39,22 @@ target_link_options(${target} PRIVATE
   -T${linker_file}
   )
 
+#if debug
+# if(${DEBUG} GREATER 0)
+  # Use Segger RTT
+  include(segger_rtt)
+  use_SeggerRTT()
 
-  set_target_properties(${target} PROPERTIES OUTPUT_NAME ${target}.elf)
+  target_compile_definitions(${target} PUBLIC DBG_LOG_CFG=${DEBUG})
+  target_link_libraries(${target} PRIVATE segger_rtt)
+
+# endif()
+
+
+set_target_properties(${target} PROPERTIES OUTPUT_NAME ${target}.elf)
+
+
+
 
 # Create hex file
 add_custom_command(TARGET ${target}
@@ -51,13 +66,20 @@ add_custom_command(TARGET ${target}
 
 # Load Firmware
 add_custom_target(load
-  COMMAND openocd -f interface/stlink.cfg -f target/stm32g0x.cfg -c 'program ${CMAKE_CURRENT_BINARY_DIR}/${target} verify reset exit'
+  COMMAND openocd -f interface/stlink.cfg -f target/stm32g0x.cfg -c 'program ${CMAKE_CURRENT_BINARY_DIR}/${target}.elf verify reset exit'
   COMMENT "Loading firmware..."
   USES_TERMINAL
 )
 
 # Show largest Flash/RAM entities
 add_custom_target(size
-  COMMAND arm-none-eabi-nm --print-size --size-sort --radix=d ${CMAKE_CURRENT_BINARY_DIR}/${target} | tail -30
+  COMMAND arm-none-eabi-nm --print-size --size-sort --radix=d ${CMAKE_CURRENT_BINARY_DIR}/${target}.elf | tail -30
   COMMENT "Flash/RAM entity sizes:"
+)
+
+# Run RTT Monitor function
+add_custom_target(mon
+  COMMAND ${CMAKE_SOURCE_DIR}/scripts/monitor_rtt.sh 
+  COMMENT "Running RTT Monitor..."
+  USES_TERMINAL
 )

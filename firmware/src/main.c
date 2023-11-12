@@ -20,6 +20,9 @@
 #include "main.h"
 #include "bsp.h"
 #include "bsp_pins.h"
+#include "stm32g0xx_hal.h"
+
+#include "game.h"
 
 
 /* Private includes ----------------------------------------------------------*/
@@ -58,16 +61,23 @@ int main(void)
   Bsp_init();
 
 
-  /* Infinite loop */
+  Buzzer_beep(1000);
+  HAL_Delay(50);
+  Buzzer_stop();
+
+
+  // Infinite loop
   while (1)
   {
-   
+    Game_task();
+    Bsp_sleep();
   }
 }
 
 
-void HAL_SYSTICK_Callback(void) {
 
+void HAL_SYSTICK_Callback(void) {
+  Key_process();
 }
 
 
