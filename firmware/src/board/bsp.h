@@ -34,6 +34,7 @@ void Led_setState(uint8_t led, bool state);
 
 bool Key_isPress(uint8_t key);
 bool Key_isRelease(uint8_t key);
+bool Key_getState(uint8_t key);
 void Key_flush(void);
 void Key_process(void);
 

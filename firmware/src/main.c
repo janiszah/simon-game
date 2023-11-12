@@ -60,12 +60,24 @@ int main(void)
 
   Bsp_init();
 
+  uint32_t start = HAL_GetTick();
+  bool turnOn = false;
+  while((Key_getState(0) || Key_getState(1) || Key_getState(2) || Key_getState(3)) && !turnOn) {
+    if((HAL_GetTick() - start) > 1000) {
+      turnOn = true;
+    }
+  }
+
+  if(!turnOn) {
+    Bsp_standby();
+  }
 
   Buzzer_beep(1000);
   HAL_Delay(50);
   Buzzer_stop();
 
-
+  Game_init();
+    
   // Infinite loop
   while (1)
   {

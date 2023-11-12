@@ -49,8 +49,9 @@ static uint8_t s_input;
 
 static uint32_t s_time;
 
-void Game_init(void) {
 
+void Game_init(void) {
+  s_lastPressTime = HAL_GetTick();
 }
 
 
@@ -59,12 +60,22 @@ void Game_task(void) {
 
   switch(s_state) {
     case STATE__START:
+      uint32_t tNow = HAL_GetTick();
 
-      if((HAL_GetTick() - s_time) > 250) {
+      if((tNow - s_time) > 250) {
         s_time = HAL_GetTick();
         Led_setState(s_skill, 0);
         s_skill = (s_skill + 1) & 0x3;
         Led_setState(s_skill, 1);
+      }
+
+      if((tNow - s_lastPressTime) > 10000) {
+        Led_setState(s_skill, 0);
+          Buzzer_beep(500);
+          HAL_Delay(50);
+          Buzzer_stop();
+        s_state = STATE__SLEEP;
+        break;
       }
     
       // Wait Key press

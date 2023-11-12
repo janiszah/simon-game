@@ -120,6 +120,10 @@ bool Key_isRelease(uint8_t key) {
   return Button_isRelease(&s_btns[key]);
 }
 
+bool Key_getState(uint8_t key) {
+  return ((kBtnIo[key].port->IDR & kBtnIo[key].pin) == 0);
+}
+
 void Key_flush(void) {
   for(uint32_t i=0; i<BTN_COUNT; i++) {
     s_btns[i].press = 0;
